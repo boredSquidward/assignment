@@ -183,7 +183,7 @@ class DashboardCard extends StatelessWidget {
                   child: Opacity(
                     opacity: 0.15,
                     child: SvgPicture.asset(
-                      'assets/icons/bg card.svg',
+                      'assets/icons/bg%20card.svg',
                       width: 379.15,
                       height: 264.87,
                     ),
