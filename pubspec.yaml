@@ -26,6 +26,7 @@ dependencies:
   flutter_svg: ^2.0.16
   flutter_secure_storage: ^9.2.3
   date_formatter: ^0.0.4
+  flutter_dotenv: ^5.2.1
 
 dev_dependencies:
   flutter_test:
@@ -42,6 +43,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - .env
 
   # fonts:
   #   - family: Schyler
