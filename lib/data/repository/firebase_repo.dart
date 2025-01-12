@@ -1,14 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class FirebaseRepo {
   Future<void> init() async {
     await Firebase.initializeApp(
-        options: const FirebaseOptions(
-            apiKey: 'AIzaSyC3DVfBIYKs-EbQpA7k7E7UdLK5ILQgZ9k',
-            appId: '1:898371880955:web:6a55633646d58e12bded5e',
-            messagingSenderId: '898371880955',
-            projectId: 'mylorry-org'));
+        options: FirebaseOptions(
+            apiKey: dotenv.get('FIREBASE_API_KEY'),
+            appId: dotenv.get('FIREBASE_APP_ID'),
+            messagingSenderId: dotenv.get('FIREBASE_MESSAGING_SENDER_ID'),
+            projectId: dotenv.get('FIREBASE_PROJECT_ID')));
   }
 
   Future<UserCredential> signIn(String email, String password) async =>
