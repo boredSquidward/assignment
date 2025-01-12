@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tug_assessment/ui/routes/routes.dart';
 
+import 'core/app_inits/app_initializations.dart';
 import 'core/dependency_injection/di.dart';
-import 'core/dependency_injection/locator.dart';
-import 'data/repository/firebase_repo.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
   final di = DependencyInjections();
-  di.initFirebaseApis();
-  await locator<FirebaseRepo>().init();
-  di.initSecureStorage();
-  di.initRepositories();
-  di.initUseCases();
-  di.initBlocs();
+  await AppInitializations(di).init();
 
   runApp(const MyApp());
 }
