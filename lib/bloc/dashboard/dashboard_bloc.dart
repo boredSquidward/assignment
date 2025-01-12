@@ -35,7 +35,6 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     });
 
     on<UpdateOrgIdEvent>((event, emit) {
-      print(event.orgId);
       emit(state.copyWith(orgId: event.orgId));
     });
   }
